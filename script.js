@@ -1,28 +1,60 @@
-document.querySelectorAll("[data-menu]").forEach(btn=>{
-  btn.addEventListener("click",()=>{
-    document.querySelector(".nav-links")?.classList.toggle("open");
-  });
+const menuButton = document.querySelector("[data-menu]");
+const navigation = document.querySelector("#site-nav");
+
+function closeMenu() {
+  if (!menuButton || !navigation) return;
+  menuButton.setAttribute("aria-expanded", "false");
+  menuButton.setAttribute("aria-label", "Open navigation");
+  navigation.classList.remove("open");
+  document.body.classList.remove("menu-open");
+}
+
+menuButton?.addEventListener("click", () => {
+  const isOpen = menuButton.getAttribute("aria-expanded") === "true";
+  menuButton.setAttribute("aria-expanded", String(!isOpen));
+  menuButton.setAttribute("aria-label", isOpen ? "Open navigation" : "Close navigation");
+  navigation?.classList.toggle("open", !isOpen);
+  document.body.classList.toggle("menu-open", !isOpen);
 });
 
-const year = document.querySelector("[data-year]");
-if(year) year.textContent = new Date().getFullYear();
+navigation?.querySelectorAll("a").forEach((link) => link.addEventListener("click", closeMenu));
+window.addEventListener("keydown", (event) => {
+  if (event.key === "Escape") closeMenu();
+});
+window.addEventListener("resize", () => {
+  if (window.innerWidth > 760) closeMenu();
+});
+
+document.querySelectorAll("[data-year]").forEach((year) => {
+  year.textContent = new Date().getFullYear();
+});
 
 const spend = document.querySelector("#spendRange");
 const turnout = document.querySelector("#turnoutRange");
 
-function updateScenario(){
-  if(!spend || !turnout) return;
-  const s = Number(spend.value);
-  const t = Number(turnout.value);
-  document.querySelector("#spendValue").textContent = `$${s.toLocaleString()}`;
-  document.querySelector("#turnoutValue").textContent = `${t}%`;
-  const reach = Math.round(8400 + s * 0.42);
-  const contacts = Math.round(reach * (0.08 + t/1000));
-  const lift = (2.3 + (s/10000)*0.6 + (t-45)*0.05).toFixed(1);
-  document.querySelector("#reachOut").textContent = reach.toLocaleString();
-  document.querySelector("#contactOut").textContent = contacts.toLocaleString();
-  document.querySelector("#liftOut").textContent = `+${lift} pts`;
+function updateScenario() {
+  if (!spend || !turnout) return;
+  const budget = Number(spend.value);
+  const turnoutRate = Number(turnout.value);
+  const spendValue = document.querySelector("#spendValue");
+  const turnoutValue = document.querySelector("#turnoutValue");
+  const reachOut = document.querySelector("#reachOut");
+  const contactOut = document.querySelector("#contactOut");
+  const liftOut = document.querySelector("#liftOut");
+
+  if (spendValue) spendValue.textContent = "$" + budget.toLocaleString();
+  if (turnoutValue) turnoutValue.textContent = turnoutRate + "%";
+
+  const reach = Math.round(8400 + budget * 0.42);
+  const contacts = Math.round(reach * (0.08 + turnoutRate / 1000));
+  const lift = (2.3 + (budget / 10000) * 0.6 + (turnoutRate - 45) * 0.05).toFixed(1);
+
+  if (reachOut) reachOut.textContent = reach.toLocaleString();
+  if (contactOut) contactOut.textContent = contacts.toLocaleString();
+  if (liftOut) liftOut.textContent = "+" + lift + " pts";
 }
+
 spend?.addEventListener("input", updateScenario);
 turnout?.addEventListener("input", updateScenario);
 updateScenario();
+

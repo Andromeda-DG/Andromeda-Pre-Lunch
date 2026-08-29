@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Andromeda Hub | Campaign Intelligence Workspace</title>
+  <meta name="description" content="Andromeda Hub organizes campaign models, field performance, message learning and recommendations into one decision-focused workspace.">
+  <link rel="canonical" href="https://andromedadg.com/hub.html">
+  <meta property="og:title" content="Andromeda Hub">
+  <meta property="og:description" content="Your campaign’s intelligence, organized around action.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://andromedadg.com/hub.html">
+  <meta property="og:image" content="https://andromedadg.com/assets/og-andromeda.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" type="image/svg+xml" href="assets/andromeda-mark.svg">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="container nav">
+    <a class="brand" href="index.html" aria-label="Andromeda Data Group home">
+      <span class="brand-logo"><img src="assets/andromeda-mark.svg" alt=""></span>
+      <span class="brand-wordmark">Andromeda<small>Data Group</small></span>
+    </a>
+    <button class="menu-button" type="button" data-menu aria-expanded="false" aria-controls="site-nav" aria-label="Open navigation"><span></span><span></span><span></span></button>
+    <nav class="nav-links" id="site-nav" aria-label="Primary navigation">
+      <a href="services.html">Services</a>
+      <a href="hub.html" aria-current="page">Andromeda Hub</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a class="nav-cta" href="contact.html">Discuss your campaign</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <section class="page-hero">
+    <div class="container">
+      <span class="kicker">Andromeda Hub</span>
+      <h1>The operating view for campaign intelligence.</h1>
+      <p class="lead">Andromeda Hub is a campaign-facing workspace designed to organize Andromeda’s analysis in one place. It brings model outputs, field trends, message learning, audience signals and recommended actions into a clear view of what changed—and what your team should consider next.</p>
+      <div class="hero-actions"><a class="btn btn-primary" href="contact.html">Talk with us about the Hub</a><a class="btn btn-secondary" href="#how-it-works">How it works</a></div>
+    </div>
+  </section>
+
+  <section class="section section-tint">
+    <div class="container">
+      <div class="section-head split">
+        <div><span class="kicker">Illustrative experience</span><h2>One place to move from signal to decision.</h2></div>
+        <p class="lead">The Hub does not ask campaigns to abandon the tools they already use. It is designed to sit above them—organizing the analysis and priorities they produce into a decision layer for campaign leadership.</p>
+      </div>
+
+      <div class="hub-shell" aria-label="Interactive illustration of Andromeda Hub">
+        <aside class="hub-sidebar">
+          <div class="hub-side-title"><i></i>Andromeda Hub</div>
+          <div class="hub-side-item active">Overview</div>
+          <div class="hub-side-item">Voter Models</div>
+          <div class="hub-side-item">Field</div>
+          <div class="hub-side-item">Messages</div>
+          <div class="hub-side-item">Audience Signals</div>
+          <div class="hub-side-item">Performance</div>
+          <div class="hub-side-item">Scenarios</div>
+        </aside>
+        <div class="hub-dashboard">
+          <div class="hub-dash-head">
+            <div><h2>Campaign overview</h2><span class="muted">A concise view of current priorities</span></div>
+            <span class="demo-label">Illustrative data only</span>
+          </div>
+          <div class="hub-dashboard-grid">
+            <div class="dash-card"><span>Priority persuadables</span><strong>18,420</strong><small>+1,280 this week</small></div>
+            <div class="dash-card"><span>Contact rate</span><strong>31.7%</strong><small>+4.2 points</small></div>
+            <div class="dash-card"><span>Best message lift</span><strong>+6.8</strong><small>Economic contrast</small></div>
+            <div class="dash-card"><span>Model confidence</span><strong>82%</strong><small>Validated sample</small></div>
+          </div>
+          <div class="panel-grid">
+            <div class="panel">
+              <h3>Persuasion opportunity by district</h3>
+              <div class="barset" aria-hidden="true"><div class="bar" style="height:42%"></div><div class="bar" style="height:66%"></div><div class="bar" style="height:53%"></div><div class="bar" style="height:84%"></div><div class="bar" style="height:72%"></div><div class="bar" style="height:95%"></div><div class="bar" style="height:61%"></div><div class="bar" style="height:78%"></div></div>
+              <div class="legend"><span>D1</span><span>D2</span><span>D3</span><span>D4</span><span>D5</span><span>D6</span><span>D7</span><span>D8</span></div>
+            </div>
+            <div class="panel">
+              <h3>Priority audiences</h3>
+              <div class="segment"><b><span>Low-information swing</span><span>4,820</span></b><small>High persuasion / medium turnout</small></div>
+              <div class="segment"><b><span>Young renters</span><span>3,140</span></b><small>High issue engagement</small></div>
+              <div class="segment"><b><span>Soft supporters</span><span>6,770</span></b><small>Turnout opportunity</small></div>
+            </div>
+          </div>
+          <div class="scenario">
+            <h3>Resource scenario</h3>
+            <p class="muted">Explore how additional field resources and turnout assumptions change modeled reach. This is an illustrative planning interaction, not a forecast.</p>
+            <div class="scenario-top">
+              <div><label for="spendRange">Additional field budget: <span id="spendValue"></span></label><input id="spendRange" type="range" min="0" max="25000" step="1000" value="10000"></div>
+              <div><label for="turnoutRange">Target-segment turnout: <span id="turnoutValue"></span></label><input id="turnoutRange" type="range" min="35" max="75" value="52"></div>
+            </div>
+            <div class="scenario-output">
+              <div class="dash-card"><span>Projected reach</span><strong id="reachOut">—</strong></div>
+              <div class="dash-card"><span>Projected contacts</span><strong id="contactOut">—</strong></div>
+              <div class="dash-card"><span>Modeled lift</span><strong id="liftOut">—</strong></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="notice" style="margin-top:18px">The public Hub shown here is an illustrative product experience using fictional data. Any production deployment, integration, authentication or handling of campaign data would be scoped and secured separately.</div>
+    </div>
+  </section>
+
+  <section class="section section-white">
+    <div class="container">
+      <div class="section-head"><span class="kicker">What it helps answer</span><h2>Built around the questions campaign teams ask every week.</h2></div>
+      <div class="answer-grid">
+        <article class="answer-card"><span>01</span><h3>Who needs attention now?</h3><p>Prioritize audiences by persuasion, turnout, contactability or strategic value.</p></article>
+        <article class="answer-card"><span>02</span><h3>What message is learning?</h3><p>Compare response and lift across the audiences that matter.</p></article>
+        <article class="answer-card"><span>03</span><h3>Where is field changing?</h3><p>See differences in reach, contact and follow-up performance.</p></article>
+        <article class="answer-card"><span>04</span><h3>What changed?</h3><p>Surface meaningful movement without forcing teams to hunt across systems.</p></article>
+        <article class="answer-card"><span>05</span><h3>What should shift next?</h3><p>Translate findings into ranked actions and resource tradeoffs.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-tint" id="how-it-works">
+    <div class="container">
+      <div class="section-head"><span class="kicker">How it works</span><h2>A decision layer above the campaign stack.</h2><p class="lead">The exact inputs and outputs depend on the engagement. The underlying workflow stays simple and legible.</p></div>
+      <div class="process-grid">
+        <div class="process-step"><span class="step-num">01</span><h3>Connect</h3><p>Organize approved voter, field, polling, fundraising, digital and research inputs.</p></div>
+        <div class="process-step"><span class="step-num">02</span><h3>Analyze</h3><p>Apply models, segmentation, testing and descriptive analysis to the question.</p></div>
+        <div class="process-step"><span class="step-num">03</span><h3>Prioritize</h3><p>Turn outputs into ranked audiences, opportunities, risks and recommendations.</p></div>
+        <div class="process-step"><span class="step-num">04</span><h3>Learn</h3><p>Measure results and update the view as new campaign information arrives.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-purple">
+    <div class="container">
+      <div class="section-head"><span class="kicker">Designed for campaign cadence</span><h2>Useful in the moments when the room needs an answer.</h2></div>
+      <div class="cadence-grid">
+        <article class="cadence-card"><span class="kicker">Daily</span><h3>Operating view</h3><ul><li>Priority changes and alerts</li><li>Field and contact performance</li><li>Audience movement</li></ul></article>
+        <article class="cadence-card"><span class="kicker">Weekly</span><h3>Strategy review</h3><ul><li>Message and segment learning</li><li>Geographic opportunities</li><li>Resource tradeoffs</li></ul></article>
+        <article class="cadence-card"><span class="kicker">Key moments</span><h3>Decision support</h3><ul><li>Program expansion</li><li>Creative or message shifts</li><li>Scenario comparisons</li></ul></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="cta">
+        <div><span class="kicker">A Hub shaped around your campaign</span><h2>Start with the decisions your team needs to improve.</h2><p>We’ll identify the data and intelligence views that would make those decisions faster, clearer and more defensible.</p></div>
+        <a class="btn btn-primary" href="contact.html">Discuss Andromeda Hub</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-main">
+      <div><div class="footer-brand">Andromeda Data Group</div><p class="footer-copy">Campaign intelligence for progressive candidates, organizations and teams that want sharper decisions from the data they already generate.</p></div>
+      <div><h4>Explore</h4><a href="services.html">Services</a><a href="hub.html">Andromeda Hub</a><a href="about.html">About</a></div>
+      <div><h4>Connect</h4><a href="contact.html">Contact</a><a href="mailto:Daniel.Bazargun@Andromedadg.com">Email Andromeda</a></div>
+    </div>
+    <div class="footer-bottom"><span>© <span data-year></span> Andromeda Data Group LLC</span><span>Maryland, United States</span></div>
+  </div>
+</footer>
+<script src="script.js"></script>
+</body>
+</html>
