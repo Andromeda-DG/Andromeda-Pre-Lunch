@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-labelledby="title">
+  <title id="title">Andromeda Data Group symbol</title>
+  <rect x="3" y="3" width="94" height="94" fill="#fbfaf7" stroke="#111014" stroke-width="4"/>
+  <path d="M31 31H69M31 31V69" fill="none" stroke="#111014" stroke-width="6" stroke-linecap="square"/>
+  <circle cx="31" cy="31" r="12" fill="#111014"/>
+  <circle cx="69" cy="31" r="8" fill="#111014"/>
+  <circle cx="31" cy="69" r="8" fill="#111014"/>
+</svg>
+
