@@ -29,6 +29,25 @@ document.querySelectorAll("[data-year]").forEach((year) => {
   year.textContent = new Date().getFullYear();
 });
 
+/* Andromeda Studio is the campaign login destination across the public site. */
+document.querySelectorAll("a[href='hub.html']").forEach((link) => {
+  link.href = "login.html";
+  link.textContent = link.textContent.replace(/Andromeda Hub/gi, "Andromeda Studio").replace(/Hub/gi, "Studio");
+});
+document.querySelectorAll("body *").forEach((element) => {
+  if (element.children.length === 0 && element.textContent?.includes("Andromeda Hub")) {
+    element.textContent = element.textContent.replace(/Andromeda Hub/g, "Andromeda Studio");
+  }
+});
+if (navigation && !navigation.querySelector("[data-campaign-login]")) {
+  const login = document.createElement("a");
+  login.href = "login.html";
+  login.textContent = "Login to your campaign";
+  login.setAttribute("data-campaign-login", "true");
+  const cta = navigation.querySelector(".nav-cta");
+  navigation.insertBefore(login, cta || null);
+}
+
 const spend = document.querySelector("#spendRange");
 const turnout = document.querySelector("#turnoutRange");
 
@@ -57,4 +76,3 @@ function updateScenario() {
 spend?.addEventListener("input", updateScenario);
 turnout?.addEventListener("input", updateScenario);
 updateScenario();
-
