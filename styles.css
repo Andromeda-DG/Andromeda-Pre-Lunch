@@ -438,6 +438,14 @@ textarea { min-height: 150px; resize: vertical; }
   .footer-main > div:first-child { grid-column: auto; }
 }
 
+.engagement-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:24px; margin:30px 0; }
+.engagement-card { border:1px solid var(--line); padding:30px; background:white; }
+.engagement-card.featured { border-top:4px solid var(--purple); }
+.engagement-label { color:var(--purple); font-size:14px; font-weight:700; }
+.engagement-card h3 { margin:18px 0; }
+.engagement-card p { margin-bottom:22px; }
+.pricing-note { margin:24px 0 40px; }
+@media(max-width:900px) { .engagement-grid { grid-template-columns:1fr; } }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; }

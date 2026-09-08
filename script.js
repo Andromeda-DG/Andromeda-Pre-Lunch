@@ -29,25 +29,6 @@ document.querySelectorAll("[data-year]").forEach((year) => {
   year.textContent = new Date().getFullYear();
 });
 
-/* Andromeda Studio is the campaign login destination across the public site. */
-document.querySelectorAll("a[href='hub.html']").forEach((link) => {
-  link.href = "login.html";
-  link.textContent = link.textContent.replace(/Andromeda Hub/gi, "Andromeda Studio").replace(/Hub/gi, "Studio");
-});
-document.querySelectorAll("body *").forEach((element) => {
-  if (element.children.length === 0 && element.textContent?.includes("Andromeda Hub")) {
-    element.textContent = element.textContent.replace(/Andromeda Hub/g, "Andromeda Studio");
-  }
-});
-if (navigation && !navigation.querySelector("[data-campaign-login]")) {
-  const login = document.createElement("a");
-  login.href = "login.html";
-  login.textContent = "Login to your campaign";
-  login.setAttribute("data-campaign-login", "true");
-  const cta = navigation.querySelector(".nav-cta");
-  navigation.insertBefore(login, cta || null);
-}
-
 const spend = document.querySelector("#spendRange");
 const turnout = document.querySelector("#turnoutRange");
 
@@ -76,3 +57,26 @@ function updateScenario() {
 spend?.addEventListener("input", updateScenario);
 turnout?.addEventListener("input", updateScenario);
 updateScenario();
+
+const inquiry = document.querySelector('form[name="campaign-inquiry"]');
+inquiry?.addEventListener('submit', async (event) => {
+  event.preventDefault();
+  const button = inquiry.querySelector('button[type="submit"]');
+  let status = inquiry.querySelector('[role="status"]');
+  if (!status) { status = document.createElement('p'); status.setAttribute('role', 'status'); inquiry.append(status); }
+  button.disabled = true;
+  status.textContent = 'Sending your request…';
+  try {
+    const response = await fetch('https://formsubmit.co/ajax/Daniel.Bazargun@Andromedadg.com', {
+      method: 'POST', headers: {'Content-Type': 'application/json', Accept: 'application/json'},
+      body: JSON.stringify(Object.fromEntries(new FormData(inquiry)))
+    });
+    const result = await response.json();
+    if (!response.ok || ![true, 'true'].includes(result.success)) throw new Error('Not delivered');
+    window.location.assign('/thanks.html');
+  } catch {
+    status.textContent = 'Your request could not be sent. Please try again or email Daniel.Bazargun@Andromedadg.com.';
+    button.disabled = false;
+  }
+});
+
