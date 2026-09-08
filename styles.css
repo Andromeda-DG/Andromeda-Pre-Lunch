@@ -450,3 +450,35 @@ textarea { min-height: 150px; resize: vertical; }
   html { scroll-behavior: auto; }
   *, *::before, *::after { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; }
 }
+
+/* Public website section colors, using the existing brand palette. */
+.section-lavender {
+  background: linear-gradient(120deg, #eee8f6, #f6f2fa);
+  border-color: #ded3ed;
+}
+.section-amber {
+  background: linear-gradient(120deg, #fff3d6, #fff8e9);
+  border-color: #ebddbd;
+}
+.section-peach {
+  background: linear-gradient(120deg, #fbece2, #fff5ee);
+  border-color: #edd8c9;
+}
+.section-lavender, .section-amber, .section-peach {
+  box-shadow: inset 0 1px 0 rgba(79, 46, 130, 0.08);
+}
+.service-row {
+  position: relative;
+  isolation: isolate;
+}
+.service-row::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.46), transparent);
+}
+.service-row:nth-child(even)::before {
+  background: linear-gradient(90deg, transparent, rgba(255, 243, 214, 0.7), transparent);
+}
