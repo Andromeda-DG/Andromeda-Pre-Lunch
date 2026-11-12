@@ -70,7 +70,7 @@ button, input, textarea, select { font: inherit; }
 .site-nav { display: flex; align-items: center; gap: 22px; font-size: 14px; font-weight: 600; }
 .nav-focus {
   display: inline-flex; align-items: center; min-height: 44px;
-  color: var(--purple-dark); line-height: 1.2; text-align: right;
+  color: var(--purple-dark); font-size: 15px; line-height: 1.2; text-align: right;
 }
 .nav-focus:hover, .nav-focus[aria-current="page"] { text-decoration: underline; text-underline-offset: 4px; }
 

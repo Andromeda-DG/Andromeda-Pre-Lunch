@@ -1,0 +1,55 @@
+.focus-page {
+  --focus-blue: #214f91;
+  --focus-red: #a92e3c;
+}
+
+.focus-hero { text-align: center; }
+.focus-hero h1 {
+  max-width: none;
+  margin: 0 auto 1rem;
+  font-size: clamp(2.85rem, 8.5vw, 7.5rem);
+  letter-spacing: -.055em;
+}
+.focus-hero h1 span:first-child { color: var(--focus-blue); }
+.focus-hero h1 span:last-child { color: var(--focus-red); }
+.focus-hero .lead { margin-inline: auto; }
+
+.focus-topics {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: clamp(2rem, 5vw, 4rem);
+  text-align: left;
+}
+.focus-topics a {
+  display: grid;
+  align-content: start;
+  gap: .55rem;
+  min-height: 8rem;
+  padding: 1.3rem;
+  border: 1px solid var(--line);
+  border-top: 4px solid var(--focus-blue);
+  background: var(--white);
+}
+.focus-topics a:last-child { border-top-color: var(--focus-red); }
+.focus-topics a:hover { background: var(--paper); }
+.focus-topics strong {
+  color: var(--focus-blue);
+  font: 600 1.55rem/1.1 "League Spartan", "Century Gothic", sans-serif;
+}
+.focus-topics a:last-child strong { color: var(--focus-red); }
+.focus-topics span { color: var(--ink-soft); }
+
+.focus-sections { padding-block: 1rem 4rem; }
+.focus-sections section {
+  padding-block: 2rem;
+  border-top: 1px solid var(--line);
+  scroll-margin-top: 100px;
+}
+.focus-sections h2 { font-size: clamp(1.8rem, 4vw, 2.6rem); }
+.focus-sections p { max-width: 62ch; }
+
+@media (max-width: 680px) {
+  .focus-topics { grid-template-columns: 1fr; }
+  .focus-topics a { min-height: 0; }
+}

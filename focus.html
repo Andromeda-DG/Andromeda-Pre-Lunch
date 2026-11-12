@@ -15,6 +15,7 @@
   <link rel="stylesheet" href="styles.css?v=sections-20260907">
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-HPSXDNXZXV"></script>
   <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-HPSXDNXZXV');</script>
+  <link rel="stylesheet" href="focus.css">
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
@@ -42,21 +43,32 @@
   </div>
 </header>
 
-<main id="main">
-  <section class="page-hero">
+<main id="main" class="focus-page">
+  <section class="page-hero focus-hero" aria-labelledby="focus-title">
     <div class="container">
-      <h1>Andromeda Focus</h1>
+      <h1 id="focus-title"><span>Andromeda</span> <span>Focus</span></h1>
       <p class="lead">Research on campaigns, civic participation, and the data behind them.</p>
+      <nav class="focus-topics" aria-label="Explore Andromeda Focus">
+        <a href="#research"><strong>Research &amp; Articles</strong><span>Read analysis and research briefs <span aria-hidden="true">→</span></span></a>
+        <a href="#us-map"><strong>U.S. Political Map</strong><span>See what’s planned for the map <span aria-hidden="true">→</span></span></a>
+        <a href="#predictions"><strong>Predictions</strong><span>Find upcoming forecasts <span aria-hidden="true">→</span></span></a>
+      </nav>
     </div>
   </section>
-  <section class="section">
-    <div class="container">
-      <div class="section-head">
-        <h2>Research articles and briefs</h2>
-        <p>We’re preparing our first publication. Each article will explain the question, the data and methods, and what the findings can tell us.</p>
-      </div>
-    </div>
-  </section>
+  <div class="container focus-sections">
+    <section id="research" aria-labelledby="research-title">
+      <h2 id="research-title">Research &amp; Articles</h2>
+      <p>We’re preparing our first publication. Articles and briefs will include their sources, methods, and findings.</p>
+    </section>
+    <section id="us-map" aria-labelledby="map-title">
+      <h2 id="map-title">U.S. Political Map</h2>
+      <p>The interactive map is planned for a future release.</p>
+    </section>
+    <section id="predictions" aria-labelledby="predictions-title">
+      <h2 id="predictions-title">Predictions</h2>
+      <p>Forecasts will appear here with the assumptions and uncertainty behind them.</p>
+    </section>
+  </div>
 </main>
 
 <footer class="footer">
