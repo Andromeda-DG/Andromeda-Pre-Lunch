@@ -9,21 +9,21 @@
   background: var(--paper);
   text-align: center;
 }
-.focus-hero > .container { position: relative; }
-.focus-network {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
+.focus-lockup {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(.65rem, 2vw, 1.6rem);
+  margin-bottom: 1rem;
 }
-.focus-network path { fill: none; stroke: #c9d8ec; stroke-width: 1.5; }
-.focus-network path:nth-child(2) { stroke: #ebcbd0; }
-.network-blue { fill: #c9d8ec; }
-.network-red { fill: #ebcbd0; }
+.focus-lockup img {
+  width: clamp(2.6rem, 8vw, 6rem);
+  height: auto;
+  flex: none;
+}
 .focus-hero h1 {
   max-width: none;
-  margin: 0 auto 1rem;
+  margin: 0;
   font-size: clamp(2.85rem, 8.5vw, 7.5rem);
   letter-spacing: -.055em;
 }
@@ -58,7 +58,7 @@
 .focus-detail h1 { color: var(--focus-blue); }
 
 @media (max-width: 680px) {
-  .focus-network { opacity: .5; }
+  .focus-lockup { text-align: left; }
   .focus-topics { grid-template-columns: 1fr; }
   .focus-topics a { min-height: 0; }
 }
