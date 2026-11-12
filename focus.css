@@ -3,7 +3,24 @@
   --focus-red: #a92e3c;
 }
 
-.focus-hero { text-align: center; }
+.focus-hero {
+  position: relative;
+  overflow: hidden;
+  background: var(--paper);
+  text-align: center;
+}
+.focus-hero > .container { position: relative; }
+.focus-network {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+.focus-network path { fill: none; stroke: #c9d8ec; stroke-width: 1.5; }
+.focus-network path:nth-child(2) { stroke: #ebcbd0; }
+.network-blue { fill: #c9d8ec; }
+.network-red { fill: #ebcbd0; }
 .focus-hero h1 {
   max-width: none;
   margin: 0 auto 1rem;
@@ -31,25 +48,17 @@
   border-top: 4px solid var(--focus-blue);
   background: var(--white);
 }
-.focus-topics a:last-child { border-top-color: var(--focus-red); }
 .focus-topics a:hover { background: var(--paper); }
 .focus-topics strong {
   color: var(--focus-blue);
   font: 600 1.55rem/1.1 "League Spartan", "Century Gothic", sans-serif;
 }
-.focus-topics a:last-child strong { color: var(--focus-red); }
 .focus-topics span { color: var(--ink-soft); }
 
-.focus-sections { padding-block: 1rem 4rem; }
-.focus-sections section {
-  padding-block: 2rem;
-  border-top: 1px solid var(--line);
-  scroll-margin-top: 100px;
-}
-.focus-sections h2 { font-size: clamp(1.8rem, 4vw, 2.6rem); }
-.focus-sections p { max-width: 62ch; }
+.focus-detail h1 { color: var(--focus-blue); }
 
 @media (max-width: 680px) {
+  .focus-network { opacity: .5; }
   .focus-topics { grid-template-columns: 1fr; }
   .focus-topics a { min-height: 0; }
 }
