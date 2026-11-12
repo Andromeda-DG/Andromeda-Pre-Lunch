@@ -1,29 +1,21 @@
-const menuButton = document.querySelector("[data-menu]");
-const navigation = document.querySelector("#site-nav");
+const navigationMenu = document.querySelector(".nav-menu");
 
-function closeMenu() {
-  if (!menuButton || !navigation) return;
-  menuButton.setAttribute("aria-expanded", "false");
-  menuButton.setAttribute("aria-label", "Open navigation");
-  navigation.classList.remove("open");
-  document.body.classList.remove("menu-open");
+if (navigationMenu) {
+  document.addEventListener("click", (event) => {
+    if (!navigationMenu.contains(event.target)) navigationMenu.open = false;
+  });
+
+  navigationMenu.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", () => { navigationMenu.open = false; });
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key !== "Escape" || !navigationMenu.open) return;
+    const restoreFocus = navigationMenu.contains(document.activeElement);
+    navigationMenu.open = false;
+    if (restoreFocus) navigationMenu.querySelector("summary").focus();
+  });
 }
-
-menuButton?.addEventListener("click", () => {
-  const isOpen = menuButton.getAttribute("aria-expanded") === "true";
-  menuButton.setAttribute("aria-expanded", String(!isOpen));
-  menuButton.setAttribute("aria-label", isOpen ? "Open navigation" : "Close navigation");
-  navigation?.classList.toggle("open", !isOpen);
-  document.body.classList.toggle("menu-open", !isOpen);
-});
-
-navigation?.querySelectorAll("a").forEach((link) => link.addEventListener("click", closeMenu));
-window.addEventListener("keydown", (event) => {
-  if (event.key === "Escape") closeMenu();
-});
-window.addEventListener("resize", () => {
-  if (window.innerWidth > 760) closeMenu();
-});
 
 document.querySelectorAll("[data-year]").forEach((year) => {
   year.textContent = new Date().getFullYear();

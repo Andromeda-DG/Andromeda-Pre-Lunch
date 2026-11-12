@@ -17,20 +17,9 @@
 
 .homepage .hero .lead { max-width: 50ch; }
 
-.hero-art {
-  display: grid;
-  aspect-ratio: 1;
-  place-items: center;
-  overflow: hidden;
-  border: 1px solid var(--line);
-  background:
-    repeating-radial-gradient(circle at center, transparent 0 39px, rgba(79, 46, 130, .14) 40px, transparent 41px),
-    linear-gradient(140deg, var(--purple-soft), var(--paper) 60%, var(--amber-soft));
-}
-
-.hero-art img {
-  width: 41%;
-  mix-blend-mode: multiply;
+.hero-logo {
+  width: min(100%, clamp(10rem, 21vw, 16rem));
+  justify-self: center;
 }
 
 .homepage .cards {
@@ -50,26 +39,25 @@
 
 .homepage .card-number { display: none; }
 
-.home-research {
+.home-focus {
   background: var(--purple-dark);
   color: var(--white);
 }
 
-.home-research-grid {
+.home-focus-grid {
   display: grid;
   grid-template-columns: 1fr auto;
   align-items: center;
   gap: 1.5rem;
 }
 
-.home-research .lead { color: var(--white); }
-.home-research .btn { color: var(--ink); }
-.home-research .btn:hover { color: var(--purple-dark); }
+.home-focus h2, .home-focus .lead { color: var(--white); }
+.home-focus .btn { color: var(--ink); }
+.home-focus .btn:hover { color: var(--purple-dark); }
 
 @media (max-width: 760px) {
   .homepage .hero-grid,
   .homepage .cards,
-  .home-research-grid { grid-template-columns: 1fr; }
-  .hero-art { aspect-ratio: 4 / 3; }
-  .home-research .btn { justify-self: start; }
+  .home-focus-grid { grid-template-columns: 1fr; }
+  .home-focus .btn { justify-self: start; }
 }
