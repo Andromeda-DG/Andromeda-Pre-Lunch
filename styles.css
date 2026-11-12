@@ -105,16 +105,16 @@ button, input, textarea, select { font: inherit; }
   outline-color: var(--purple-dark); outline-offset: -3px;
 }
 .nav-menu-panel .nav-consultation {
-  margin-bottom: 4px; background: var(--purple-dark); color: var(--white);
+  background: var(--purple-dark); color: var(--white);
 }
 .nav-menu-panel .nav-consultation:hover { background: var(--purple); }
 .nav-menu-panel .nav-consultation:focus-visible { outline-color: var(--white); }
 .nav-menu-panel .nav-campaign-login {
-  margin-top: 4px; background: var(--amber); color: var(--ink);
+  margin-block: 4px; background: var(--amber); color: var(--ink);
 }
 .nav-menu-panel .nav-campaign-login:hover { background: var(--amber-soft); }
 .nav-menu-panel .nav-focus-login {
-  margin-top: 4px; background: var(--purple-soft); color: var(--purple-dark);
+  margin-bottom: 6px; background: var(--purple-soft); color: var(--purple-dark);
 }
 .nav-menu-panel .nav-focus-login:hover {
   box-shadow: inset 0 0 0 1px var(--purple);
